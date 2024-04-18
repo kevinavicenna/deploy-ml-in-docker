@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  tfserving_classifier:
+    image: tensorflow/serving
+    ports:
+      - "8501:8501"
+    volumes:
+      - /home/kevin/Documents/PROJECT/tensorflow-serving/img_classifier/:/models/img_classifier
+    environment:
+      - MODEL_NAME=img_classifier
+    networks:
+      - jaringanku
+
+  python_script:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /home/kevin/Documents/PROJECT/tensorflow-serving/:/models/app
+    networks:
+      - jaringanku
+
+networks:
+  jaringanku:
+    driver: bridge

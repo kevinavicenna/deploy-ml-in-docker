@@ -1,0 +1,10 @@
+docker run -p 8501:8501 \
+    --name tfserving_classifier \
+    --mount type=bind,source=/home/kevin/Documents/PROJECT/tensorflow-serving/img_classifier/,target=/models/img_classifier \
+    -e MODEL_NAME=img_classifier \
+    --network jaringan \
+    -t tensorflow/serving
+
+docker run -p 8502:8502 --network jaringan streamlitt
+
+
