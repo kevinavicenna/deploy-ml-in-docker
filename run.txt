@@ -5,6 +5,9 @@ docker run -p 8501:8501 \
     --network jaringan \
     -t tensorflow/serving
 
-docker run -p 8502:8502 --network jaringan streamlitt
+
+docker build -t streamlittt .
+
+docker run -p 8502:8502 --name streamlit --network jaringan streamlittt
 
 

@@ -13,7 +13,8 @@ x_test = x_test.reshape((x_test.shape[0], x_test.shape[1], x_test.shape[2], 1))
 x_test = x_test.astype('float32') / 255.0
 
 # Server URL
-url = 'http://localhost:8501/v1/models/img_classifier:predict'
+# url = 'http://localhost:8501/v1/models/img_classifier:predict'
+url = 'http://tfserving_classifier:8501/v1/models/img_classifier:predict'
 
 # Function to make predictions
 def make_prediction(instances):
