@@ -12,12 +12,12 @@ services:
     networks:
       - jaringanku
 
-  python_script:
+  streamlit:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /home/kevin/Documents/PROJECT/tensorflow-serving/:/models/app
+      - /home/kevin/Documents/PROJECT/tensorflow-serving/:/app
     networks:
       - jaringanku
 
