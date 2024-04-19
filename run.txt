@@ -4,8 +4,7 @@ docker run -p 8501:8501 \
     -e MODEL_NAME=img_classifier \
     --network jaringan \
     -t tensorflow/serving
-
-
+    
 docker build -t streamlittt .
 
 docker run -p 8502:8502 --name streamlit --network jaringan streamlittt

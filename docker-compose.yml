@@ -3,6 +3,7 @@ version: '3.8'
 services:
   tfserving_classifier:
     image: tensorflow/serving
+    container_name: tfserving_classifier
     ports:
       - "8501:8501"
     volumes:
@@ -16,6 +17,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: streamlit
+    ports:
+      - "8502:8502"
     volumes:
       - /home/kevin/Documents/PROJECT/tensorflow-serving/:/app
     networks:
